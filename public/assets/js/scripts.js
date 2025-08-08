@@ -567,11 +567,9 @@ function updateFullscreenIcon() {
 fullScreenToggleBtn.addEventListener('click', () => {
     const elem = document.documentElement;
     if (!document.fullscreenElement) {
-        elem.requestFullscreen().catch(err =>
-            console.error(`Error entering fullscreen: ${err.message}`)
-        );
+        elem.requestFullscreen().catch(() => {});
     } else {
-        document.exitFullscreen();
+        document.exitFullscreen().catch(() => {});
     }
 });
 
@@ -627,21 +625,20 @@ function handleQuoteCommand() {
 
     return fetch(apiURL)
         .then(response => {
-            if (!response.ok) throw new Error("Network response was not ok");
+            if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
             return response.json();
         })
         .then(data => {
-            if (data?.quote?.text) {
-                const quote = data.quote.text;
-                const author = data.quote.author || "Unknown";
-                printToTerminal(`💬 Quote:\n"${quote} – ${author}"`);
+            if (typeof data?.quote === "string" && data.quote.trim() !== "") {
+                printToTerminal(
+                  `<span class="response-title">💬 Quote of the Moment:</span><br>${data.quote}`
+                );
             } else {
-                printToTerminal("🤷 No quote found.");
+                printToTerminal("🤷 There is no quote at the moment. Please try again later.");
             }
         })
         .catch(error => {
-            console.error("Quote fetch error:", error);
-            printToTerminal("Could not fetch a quote right now.");
+            printToTerminal("⚠️ There is no quote at the moment. Please try again later.");
         });
 }
 
