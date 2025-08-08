@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Abhinav's Terminal Portfolio</title>
+
+    <link rel="icon" href="/assets/images/favicon/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        html,body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            background-color: hsl(0, 0%, 7%);
+            color: hsl(190 100% 50% / 1);
+            display: flex;
+            flex-direction: column;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        main {
+            flex: 1;
+            overflow-y: auto;
+            padding: 25px;
+        }
+
+        .ascii-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 10px 0;
+            gap: 30px;
+            align-items: flex-start;
+            text-align: left;
+        }
+
+        .main-logo {
+            font-family: 'Cascadia Code', monospace;
+            font-size: 2.8px;
+            line-height: 1;
+            color: hsl(190 100% 50% / 1);
+            text-shadow: hsl(190 100% 50% / 1) 0px 0px 1px;
+            max-width: 100%;
+            overflow: auto;
+        }
+
+        .ascii-404 {
+            font-family: monospace;
+            color: hsl(190 100% 50% / 1);
+            font-size: 16px;
+            padding: 0 10px;
+            font-weight: bold;
+            white-space: pre;
+            line-height: 1.2;
+        }
+
+        .ascii-404 span {
+            font-size: 17px;
+        }
+
+        footer {
+            position: relative;
+            bottom: 0; left: 0;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            font-weight: 500;
+            width: 100%;
+            border-top: 0.5px solid hsl(190, 100%, 50%);
+            text-align: center;
+        }
+
+        .copyright-symbol {
+            font-size: 20px;
+            vertical-align: middle;
+        }
+
+        .command-line {
+            display: flex;
+            gap: 5px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .user-input {
+            outline: none;
+            color: white;
+            flex-grow: 1;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        .terminal-output {
+            color: white;
+            margin: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            -webkit-user-select: text;
+            user-select: text;
+        }
+
+        .terminal-output,
+        .terminal-output * {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .terminal-output-line {
+            overflow-x: auto;
+            margin-bottom: 10px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .terminal-output-line::-webkit-scrollbar {
+            display: none;
+        }
+
+        .prompt {
+            color: hsl(190, 100%, 50%);
+            font-weight: bold;
+        }
+
+        #user-input {
+            outline: none;
+            display: inline-block;
+            min-width: 10px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        @media (max-width: 992px) {
+            .main-logo {
+                font-size: 2.3px;
+            }
+            .ascii-404 {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 15px;
+            }
+            .command-terminal {
+                margin: 15px;
+            }
+            .main-logo {
+                font-size: 1.8px;
+            }
+            .ascii-404 {
+                font-size: 10px;
+            }
+            .ascii-404 span {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            main {
+                padding: 10px;
+            }
+            .command-terminal {
+                margin: 10px;
+            }
+            .ascii-container {
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .main-logo {
+                font-size: 1.5px;
+            }
+            .ascii-404 {
+                font-size: 8px;
+            }
+            .ascii-404 span {
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- no-script banner-->
+    <noscript>
+        <style>
+            main { margin-top: 100px !important; }
+            .sidebar { top: 80px !important; }
+            .no-js-banner {
+              position: fixed; top: 0; left: 0; width: 100%; background: #cc2b2b; color: #fff;
+              font-family: 'Poppins', sans-serif; font-size: 0.75rem; padding: 0.7rem 1rem; text-align: center;
+              z-index: 9999; box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5); letter-spacing: 0.03em;
+            }
+            @media (min-width: 480px) {
+              .no-js-banner { font-size: 0.855rem; padding: 0.85rem 1.25rem; }
+            }
+            @media (min-width: 768px) {
+              main { margin-top: 80px !important; }
+            }
+        </style>
+
+        <div class="no-js-banner">
+            ⚠️ JavaScript is currently disabled in your browser. <br>
+            This website requires JavaScript to function properly. Please enable it or switch to a modern browser.
+        </div>
+    </noscript>
+    <main>
+    <div class="ascii-container">
+  <pre class="main-logo" title="Abhinav">
+    <span>                                       ___~ggggggggggg~____
+                                     __g@@@@@@@@@@@@@@@@@@@@@@@@@@g__
+                                 _g@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@__
+                             _~@@@@@@@@@@@@@D=&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&lt;4B@@@@@@@@@@@@@@g_
+                          _a@@@@@@@@@B*&quot;                        &quot;*@@@@@@@@@@@a
+                        _@@@@@@@@D&quot;                                  &lt;@@@@@@@@@g
+                     ,g@@@@@@@P                                         &quot;@@@@@@@@b
+                   _@@@@@@@P                                              `@@@@@@@@_
+                 ,g@@@@@B&quot;                            g@a                   &apos;@@@@@@@a
+                g@@@@@P                              g@@@\                    \@@@@@@g
+              _@@@@@D                               /@@@@@                     `@@@@@@h
+             @@@@@@                                .@@@@@@@                      @@@@@@\
+           _@@@@@&quot;                                 @@@@@@@@h                     &apos;@@@@@@
+          /@@@@W                                  J@@@@@@@@@,                     @@@@@@,
+         g@@@@F                                  ,@@@@@@@@@@@                     !@@@@@B
+        @@@@@&apos;                                   @@@@@@@@@@@@@                     @@@@@@
+       @@@@@                                    A@@@@@@@@@@@@@l                    @@@@@@
+      g@@@@                                    ,@@@@@@@@@@@@@@@                   ;@@@@@@
+     {@@@@                                     @@@@@@@@@@@@@@@@@                  g@@@@@F
+    ,@@@@                                     g@@@@@F&apos;@@@@@@@@@@1                ,@@@@@@
+    @@@@&apos;                                    /@@@@@@  9@@@@@@@@@@,               @@@@@@@
+   g@@@F                                     @@@@@@    @@@@@@@@@@@              @@@@@@@
+  ,@@@@                                     @@@@@@F    \@@@@@@@@@@A           _@@@@@@@/
+  @@@@&apos;                                    /@@@@@@      @@@@@@@@@@@,         j@@@@@@@/
+  @@@W                                    .@@@@@@        @@@@@@@@@@@       _@@@@@@@@&apos;
+ |@@@                                     @@@@@@F        {@@@@@@@@@@`    _@@@@@@@@B
+ @@@@                                    {@@@@@@          @@@@@@@@B    _@@@@@@@@@&quot;
+.@@@F                                   ,@@@@@@&apos;           @@@@@P    _@@@@@@@@@P
+[@@@&apos;                                   @@@@@@P            {@@P    _@@@@@@@@@P
+[@@@                                   A@@@@@@              &apos;   _g@@@@@@@@@D
+[@@@                                  ,@@@@@@/                _@@@@@@@@@@P
+[@@@                                  @@@@@@@              ,a@@@@@@@@@@P
+[@@@                                 g@@@@@@@@@@@@@@"    _@@@@@@@@@@@F
+[@@@                                ,@@@@@@@@@@@@@&quot;   ,o@@@@@@@@@@@&quot;   _g@,
+!@@@                                @@@@@@@@@@@@"   _@@@@@@@@@@@P    _@@@@@
+'@@@                               g@@@@@@"      _g@@@@@@@@@@@P    _@@@@@@@g
+ @@@;                             ;@@@@@@"     _@@@@@@@@@@@@&quot;    _@@@@@@@@@@,                            i
+ [@@@                             @@@@@"    _g@@@@@@@@@@@P       Q@@@@@@@@@@@                            a
+  @@@                            g@@@P    _@@@@@@@@@@@@&quot;          @@@@@@@@@@@@                           b
+  @@@1                          ,@@&quot;   _g@@@@@@@@@@@P             {@@@@@@@@@@@1                          h
+  &apos;@@@                          P    _@@@@@@@@@@@@&quot;                @@@@@@@@@@@@,                        i'
+   @@@1                            _@@@@@@@@@@@D&apos;                   @@@@@@@@@@@@                        n
+    @@@                         ,g@@@@@@@@@@@P                      V@@@@@@@@@@@@                      a'
+    {@@@                      ,@@@@@@@@@@@@&quot;                         @@@@@@@@@@@@g                     v
+     Q@@a                    g@@@@@@@@@@D                            &apos;@@@@@@@@@@@@a                   N
+      @@@\                 _@@@@@@@@@@P                               [@@@@@@@@@@@@b                 g
+       @@@\              _g@@@@@@@@@@                                  @@@@@@@@@@@@@@_              A
+        @@@\       __ggg@@@@@@@@@@@@@ggg__                           _g@@@@@@@@@@@@@@@@@gg___      j
+         @@@L     `*===0BBBBBBBBBBD=====&gt;&quot;                           &apos;&quot;&quot;&lt;===4BBBBBBBBBBBBBB=&quot;     g
+          Q@@g                                                                                  ,@
+           T@@@,                                                                               _P
+            &apos;@@@L                                                                            ,@&quot;
+              %@@@,                                                                         oW
+               &apos;@@@g                                                                      _@&quot;
+                 &apos;@@@g                                                                  _@F
+                   &quot;@@@g,                                                             _@F
+                     &apos;@@@@_                                                         _@&quot;
+                        %@@@g_                                                   _@P
+                          &apos;0@@@g_                                            __@B&quot;
+                             &apos;%@@@@a_                                    __@@D&quot;
+                                 &quot;0@@@@g___                        ___g@@B&quot;
+                                      &quot;0@@@@@@@gg=-________-=gg@@@@@B&gt;&apos;
+                                            `&quot;&quot;&lt;=BBB@@@@@BBB=&gt;&quot;&quot;
+    </span>
+  </pre>
+
+        <div class="ascii-404">
+██╗  ██╗  ██████╗  ██╗  ██╗
+██║  ██║ ██╔═══██╗ ██║  ██║
+███████║ ██║   ██║ ███████║
+╚════██║ ██║   ██║ ╚════██║
+     ██║ ╚██████╔╝      ██║
+     ╚═╝  ╚═════╝       ╚═╝
+
+<span>Ooops! Looks like you are lost</span>
+        </div>
+    </div>
+    <div class="terminal-output">
+        <span>Type <span class="prompt">'help'</span> to view a list of available commands.</span><br />
+        <div class="command-line">
+            <span id="user-input" class="user-input" contenteditable="true" spellcheck="false"></span>
+        </div>
+        <!-- Future Output or Command Response Goes Here -->
+    </div>
+
+</main>
+
+<script>
+    let terminalOutput;
+
+    function scrollToBottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function escapeHTML(str) {
+        return str.replace(/[&<>"']/g, m => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#39;'
+        })[m]);
+    }
+
+    function printToTerminal(text) {
+        const outputDiv = document.createElement("div");
+        outputDiv.className = "terminal-output-line";
+        outputDiv.innerHTML = `<pre>${escapeHTML(text)}</pre>`;
+        terminalOutput.appendChild(outputDiv);
+        scrollToBottom();
+    }
+
+    function getCommandOutput(cmd) {
+        switch (cmd.toLowerCase()) {
+            case "help":
+                return (
+                    "Available commands:\n\n" +
+                    "home              - Return to the homepage\n" +
+                    "iabhinav          - Open my personal portfolio website\n" +
+                    "clear             - Clear the terminal screen\n" +
+                    "help              - Display this help message"
+                );
+            case 'home':
+                window.location.href = '/';
+                return null;
+            case 'iabhinav':
+                window.open("https://iabhinav.me", "_blank");
+                return null;
+            case 'date':
+                printToTerminal(`${new Date().toDateString()}`);
+                return null;
+            case 'time':
+                printToTerminal(`${new Date().toLocaleTimeString()}`);
+                return null;
+            case 'clear':
+                terminalOutput.innerHTML = '';
+                const hintLine = document.createElement("div");
+                hintLine.innerHTML = `<span>Type <span class="prompt">'help'</span> to view a list of available commands.</span><br><br>`;
+                terminalOutput.insertBefore(hintLine, terminalOutput.firstChild);
+                return null;
+            default:
+                return `Command not found: ${cmd}`;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const yearSpan = document.getElementById("currentYear");
+        if (yearSpan) {
+            yearSpan.textContent = new Date().getFullYear();
+        }
+
+        terminalOutput = document.querySelector(".terminal-output");
+
+        function createInputLine() {
+            const wrapper = document.createElement("div");
+            wrapper.className = "command-line";
+
+            const prompt = document.createElement("span");
+            prompt.className = "prompt";
+            prompt.textContent = "visitor@iabhinav.me:~$ ";
+
+            const input = document.createElement("span");
+            input.className = "user-input";
+            input.contentEditable = "true";
+            input.spellcheck = false;
+
+            input.addEventListener("keydown", function handler(e) {
+                if (e.key === "Enter") {
+                    e.preventDefault();
+                    const cmd = input.innerText.trim();
+
+                    input.contentEditable = "false";
+                    input.removeEventListener("keydown", handler);
+
+                    const outputText = getCommandOutput(cmd);
+                    if (outputText !== null) {
+                        const outputDiv = document.createElement("div");
+                        outputDiv.className = "terminal-output-line";
+                        outputDiv.innerHTML = `<pre>${escapeHTML(outputText)}</pre>`;
+                        input.parentNode.insertAdjacentElement("afterend", outputDiv);
+                    }
+
+                    terminalOutput.appendChild(createInputLine());
+                    scrollToBottom();
+                }
+            });
+
+            wrapper.appendChild(prompt);
+            wrapper.appendChild(input);
+            terminalOutput.appendChild(wrapper);
+            setTimeout(() => input.focus(), 0);
+            return wrapper;
+        }
+
+        createInputLine();
+    });
+
+    document.addEventListener("click", () => {
+        const inputs = document.querySelectorAll(".user-input[contenteditable='true']");
+        if (inputs.length > 0) {
+            const lastInput = inputs[inputs.length - 1];
+            lastInput.focus();
+            const range = document.createRange();
+            range.selectNodeContents(lastInput);
+            range.collapse(false);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    });
+</script>
+
+<footer class="footer">
+    <div class="footerContainer">
+        <p class="copyright">
+            <span class="copyright-symbol">©</span>
+            <span id="currentYear">2025</span> <a href="https://iabhinav.me?utm_source=terminal" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Abhinav Jaiswal</a> | All Rights Reserved
+        </p>
+    </div>
+</footer>
+
+</body>
+</html>

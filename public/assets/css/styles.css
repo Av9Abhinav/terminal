@@ -1,0 +1,521 @@
+/* Minifier: https://www.cleancss.com/css-minify/ */
+
+:root {
+    --background-color: black;
+    --accent-color: hsl(190, 100%, 50%);
+    --link-color: hsl(190, 100%, 50%);
+    --text-color: white;
+    --ascii-color: hsl(190, 100%, 50%);
+    --footer-color: hsl(190, 100%, 50%);
+    --prompt-color: hsl(190, 100%, 50%);
+    --suggestion-color: hsl(0, 0%, 30%);
+}
+
+/* Light Theme */
+.theme-light {
+    --background-color: white;
+    --accent-color: hsl(190, 100%, 10%);
+    --link-color: hsl(190, 100%, 25%);
+    --text-color: black;
+    --ascii-color: hsl(190, 100%, 10%);
+    --footer-color: hsl(190, 100%, 10%);
+    --prompt-color: hsl(190, 100%, 10%);
+    --suggestion-color: hsl(0, 0%, 70%);
+}
+
+/* Dark Theme */
+.theme-dark {
+    --background-color: black;
+    --accent-color: hsl(190, 100%, 50%);
+    --link-color: hsl(190, 100%, 50%);
+    --text-color: white;
+    --ascii-color: hsl(190, 100%, 50%);
+    --footer-color: hsl(190, 100%, 50%);
+    --prompt-color: hsl(190, 100%, 50%);
+    --suggestion-color: hsl(0, 0%, 30%);
+}
+
+/* Ubuntu Theme */
+.theme-ubuntu {
+    --background-color: hsl(320, 60%, 10%);
+    --accent-color: hsl(18, 83%, 54%);
+    --link-color: hsl(39, 100%, 50%);
+    --text-color: hsl(60, 10%, 92%);
+    --ascii-color: hsl(18, 83%, 54%);
+    --footer-color: hsl(18, 83%, 54%);
+    --prompt-color: hsl(18, 83%, 54%);
+    --suggestion-color: hsl(0, 20%, 30%);
+}
+
+/* Hacker Theme */
+.theme-hacker {
+    --background-color: hsl(0, 0%, 0%);
+    --accent-color: hsl(132, 100%, 53%);
+    --link-color: hsl(120, 100%, 50%);
+    --text-color: hsl(120, 100%, 50%);
+    --ascii-color: hsl(120, 100%, 50%);
+    --footer-color: hsl(132, 100%, 53%);
+    --prompt-color: hsl(132, 100%, 53%);
+    --suggestion-color: hsl(120, 100%, 20%);
+}
+
+.theme-dracula {
+    --background-color: hsl(231, 15%, 18%);
+    --text-color: hsl(60, 30%, 90%);
+    --accent-color: hsl(288, 90%, 70%);
+    --link-color: hsl(170, 100%, 70%);
+    --ascii-color: hsl(288, 90%, 70%);
+    --footer-color: hsl(288, 90%, 70%);
+    --prompt-color: hsl(288, 90%, 70%);
+    --suggestion-color: hsl(0, 0%, 40%);
+}
+
+.theme-solarized-light {
+    --background-color: hsl(45, 60%, 94%);
+    --text-color: hsl(200, 10%, 20%);
+    --accent-color: hsl(30, 100%, 50%);
+    --link-color: hsl(180, 60%, 40%);
+    --ascii-color: hsl(30, 100%, 50%);
+    --footer-color: hsl(30, 100%, 50%);
+    --prompt-color: hsl(30, 100%, 50%);
+    --suggestion-color: hsl(200, 10%, 60%);
+}
+
+.theme-monokai {
+    --background-color: hsl(225, 9%, 13%);
+    --text-color: hsl(60, 30%, 90%);
+    --accent-color: hsl(39, 100%, 56%);
+    --link-color: hsl(125, 63%, 50%);
+    --ascii-color: hsl(39, 100%, 56%);
+    --footer-color: hsl(39, 100%, 56%);
+    --prompt-color: hsl(39, 100%, 56%);
+    --suggestion-color: hsl(0, 0%, 40%);
+}
+
+.theme-nord {
+    --background-color: hsl(220, 16%, 20%);
+    --text-color: hsl(220, 28%, 88%);
+    --accent-color: hsl(222, 68%, 70%);
+    --link-color: hsl(193, 60%, 55%);
+    --ascii-color: hsl(222, 68%, 70%);
+    --footer-color: hsl(222, 68%, 70%);
+    --prompt-color: hsl(222, 68%, 70%);
+    --suggestion-color: hsl(220, 20%, 50%);
+}
+
+.theme-gruvbox {
+    --background-color: hsl(30, 20%, 10%);
+    --text-color: hsl(42, 50%, 90%);
+    --accent-color: hsl(29, 82%, 61%);
+    --link-color: hsl(130, 40%, 50%);
+    --ascii-color: hsl(29, 82%, 61%);
+    --footer-color: hsl(29, 82%, 61%);
+    --prompt-color: hsl(29, 82%, 61%);
+    --suggestion-color: hsl(30, 20%, 40%);
+}
+
+.theme-tokyo-night {
+    --background-color: hsl(233, 21%, 18%);
+    --text-color: hsl(220, 13%, 85%);
+    --accent-color: hsl(265, 60%, 70%);
+    --link-color: hsl(200, 100%, 70%);
+    --ascii-color: hsl(265, 60%, 70%);
+    --footer-color: hsl(265, 60%, 70%);
+    --prompt-color: hsl(265, 60%, 70%);
+    --suggestion-color: hsl(220, 10%, 50%);
+}
+
+.theme-pirate {
+    --background-color: hsl(30, 30%, 10%);
+    --text-color: hsl(42, 100%, 85%);
+    --accent-color: hsl(36, 100%, 55%);
+    --link-color: hsl(25, 100%, 60%);
+    --ascii-color: hsl(36, 100%, 55%);
+    --footer-color: hsl(36, 100%, 55%);
+    --prompt-color: hsl(36, 100%, 55%);
+    --suggestion-color: hsl(30, 10%, 40%);
+}
+
+.theme-matrix-reloaded {
+    --background-color: hsl(120, 100%, 5%);
+    --text-color: hsl(120, 100%, 60%);
+    --accent-color: hsl(120, 100%, 70%);
+    --link-color: hsl(120, 100%, 75%);
+    --ascii-color: hsl(120, 100%, 60%);
+    --footer-color: hsl(120, 100%, 60%);
+    --prompt-color: hsl(120, 100%, 70%);
+    --suggestion-color: hsl(120, 30%, 30%);
+}
+
+.theme-sunset {
+    --background-color: hsl(330, 50%, 15%);
+    --text-color: hsl(35, 100%, 85%);
+    --accent-color: hsl(10, 90%, 60%);
+    --link-color: hsl(28, 100%, 65%);
+    --ascii-color: hsl(10, 90%, 60%);
+    --footer-color: hsl(10, 90%, 60%);
+    --prompt-color: hsl(10, 90%, 60%);
+    --suggestion-color: hsl(330, 20%, 40%);
+}
+
+.theme-forest {
+    --background-color: hsl(120, 20%, 10%);
+    --text-color: hsl(90, 30%, 90%);
+    --accent-color: hsl(140, 60%, 50%);
+    --link-color: hsl(150, 60%, 55%);
+    --ascii-color: hsl(140, 60%, 50%);
+    --footer-color: hsl(140, 60%, 50%);
+    --prompt-color: hsl(140, 60%, 50%);
+    --suggestion-color: hsl(120, 10%, 50%);
+}
+
+
+.theme-iceberg {
+    --background-color: hsl(200, 30%, 95%);
+    --text-color: hsl(220, 20%, 20%);
+    --accent-color: hsl(210, 60%, 50%);
+    --link-color: hsl(190, 70%, 45%);
+    --ascii-color: hsl(210, 60%, 50%);
+    --footer-color: hsl(210, 60%, 50%);
+    --prompt-color: hsl(210, 60%, 50%);
+    --suggestion-color: hsl(200, 10%, 50%);
+}
+
+.theme-retro {
+    --background-color: hsl(120, 100%, 6%);
+    --text-color: hsl(120, 100%, 60%);
+    --accent-color: hsl(40, 100%, 55%);
+    --link-color: hsl(40, 100%, 60%);
+    --ascii-color: hsl(120, 100%, 60%);
+    --footer-color: hsl(120, 100%, 60%);
+    --prompt-color: hsl(40, 100%, 55%);
+    --suggestion-color: hsl(120, 20%, 40%);
+}
+
+.theme-corporate {
+    --background-color: hsl(210, 20%, 98%);
+    --text-color: hsl(210, 30%, 20%);
+    --accent-color: hsl(210, 80%, 50%);
+    --link-color: hsl(220, 60%, 45%);
+    --ascii-color: hsl(210, 80%, 50%);
+    --footer-color: hsl(210, 80%, 50%);
+    --prompt-color: hsl(210, 80%, 50%);
+    --suggestion-color: hsl(210, 10%, 60%);
+}
+
+/* Cobalt Theme */
+.theme-cobalt {
+    --background-color: hsl(220, 100%, 10%);
+    --accent-color: hsl(200, 100%, 60%);
+    --link-color: hsl(45, 100%, 60%);
+    --text-color: hsl(210, 20%, 85%);
+    --ascii-color: hsl(200, 100%, 60%);
+    --footer-color: hsl(200, 100%, 60%);
+    --prompt-color: hsl(45, 100%, 60%);
+    --suggestion-color: hsl(210, 10%, 50%);
+}
+
+html,body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.info-content h1 {
+    position: absolute;
+    height: 1px;
+    overflow: hidden;
+}
+
+main {
+    flex: 1;
+    overflow-y: auto;
+    height: 100vh;
+    padding: 25px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
+}
+
+main::-webkit-scrollbar {
+    width: 8px;
+}
+
+main::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 4px;
+}
+
+.header {
+    position: relative;
+    top: 0; left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--accent-color);
+    background-color: var(--background-color);
+    border-bottom: 0.5px solid var(--accent-color);
+}
+
+.headerContainer {
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerContainer a {
+    font-family: 'JetBrains Mono', monospace;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 1;
+}
+
+#theme-toggle,
+.fullscreen-toggle {
+    width: 18px;
+    height: 18px;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effects */
+#theme-toggle:hover,
+.fullscreen-toggle:hover {
+    opacity: 0.7;
+}
+
+#theme-toggle:hover {
+    transform: rotate(45deg);
+}
+
+.fullscreen-toggle {
+    background-color: var(--accent-color);
+    mask-image: url('/assets/images/svg/expand.svg');
+    -webkit-mask-image: url('/assets/images/svg/expand.svg');
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-size: contain;
+    -webkit-mask-size: contain;
+    mask-position: center;
+    -webkit-mask-position: center;
+}
+
+.fullscreen-toggle:hover {
+    transform: scale(1.2);
+}
+
+.ascii-container {
+    display: flex;
+    color: var(--ascii-color);
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 30px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.main-logo {
+    font-size: 2.8px;
+    line-height: 1;
+    text-shadow: 0px 0px 1px;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.ascii-name {
+    font-size: 16px;
+    padding: 0 10px;
+    font-weight: bold;
+    white-space: pre;
+    line-height: 1.2;
+}
+
+.ascii-name span {
+    font-size: 17px;
+}
+
+.command-terminal,
+.command-terminal * {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.command-terminal {
+    color: var(--text-color);
+    margin: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+.prompt {
+    flex: 0 0 auto;
+    width: fit-content;
+    color: var(--prompt-color);
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+.command-line {
+    display: flex;
+    gap: 5px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.user-input {
+    outline: none;
+    flex-grow: 1;
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+#user-input {
+    outline: none;
+    display: inline-block;
+    min-width: 10px;
+}
+
+.terminal-output-line {
+    overflow-x: auto;
+    margin-bottom: 10px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.terminal-output-line::-webkit-scrollbar {
+    display: none;
+}
+
+.terminal-output-line pre {
+    margin-block: 5px;
+    margin-inline: 3px;
+    line-height: 1.5;
+}
+
+.terminal-output-line pre a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.terminal-output-line pre a:hover {
+    text-decoration: underline;
+}
+
+.response-title {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.suggestion-output {
+    color: var(--suggestion-color);
+    font-style: italic;
+    padding: 5px;
+    white-space: pre;
+    overflow-x: auto;
+    display: block;
+    scrollbar-width: none;
+}
+
+.ascii-colored {
+    font-weight: bold;
+    background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 1px 1px 2px black;
+}
+
+footer {
+    position: relative;
+    bottom: 0; left: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--footer-color);
+    width: 100%;
+    border-top: 0.5px solid;
+    text-align: center;
+}
+
+.copyright-symbol {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@media (max-width: 992px) {
+    .main-logo {
+        font-size: 2.3px;
+    }
+    .ascii-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+    }
+    .command-terminal {
+        margin: 15px;
+    }
+    .main-logo {
+        font-size: 1.8px;
+    }
+    .ascii-name {
+        font-size: 10px;
+    }
+    .ascii-name span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    main {
+        padding: 10px;
+    }
+    .command-terminal {
+        margin: 10px;
+    }
+    .ascii-container {
+        gap: 15px;
+    }
+    .main-logo {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .ascii-name {
+        font-size: 8px;
+    }
+    .ascii-name span {
+        font-size: 11px;
+    }
+}
