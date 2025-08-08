@@ -631,7 +631,7 @@ function handleQuoteCommand() {
         .then(data => {
             if (typeof data?.quote === "string" && data.quote.trim() !== "") {
                 printToTerminal(
-                  `<span class="response-title">💬 Quote of the Moment:</span><br>${data.quote}`
+                  `<span class="response-title">💬 Quote of the Moment:</span> ${data.quote}`
                 );
             } else {
                 printToTerminal("🤷 There is no quote at the moment. Please try again later.");
